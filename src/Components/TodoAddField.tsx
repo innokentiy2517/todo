@@ -5,7 +5,9 @@ import { v4 as uuid } from "uuid";
 const TodoAddField = () => {
   const { addTodo } = useActions();
   const onAddClick = () => {
-    addTodo({ id: uuid(), text: text, completed: false });
+    if (text !== "") {
+      addTodo({ id: uuid(), text: text, completed: false });
+    }
   };
   const [text, setText] = useState("");
   return (

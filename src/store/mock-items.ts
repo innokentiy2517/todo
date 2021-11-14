@@ -14,9 +14,18 @@ export const todoList: todoListInterface[] = [
   {
     id: uuid(),
     text: "Реализовать функционал добавления и удаления",
-    completed: false,
+    completed: true,
   },
   { id: uuid(), text: "Сделать вёрстку", completed: true },
-  { id: uuid(), text: "Сделать стили", completed: false },
-  { id: uuid(), text: "Реализовать функционал выполнения", completed: false },
+  { id: uuid(), text: "Сделать стили", completed: true },
+  {
+    id: uuid(),
+    text: "Реализовать функционал смены статуса задачи",
+    completed: true,
+  },
+  {
+    id: uuid(),
+    text: "Разобраться с иконками",
+    completed: false,
+  },
 ];
