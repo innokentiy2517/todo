@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useActions } from "../hooks/useActions";
 import { v4 as uuid } from "uuid";
-import {plusPath} from "../assets/plusPath";
+import { plusPath } from "../assets/plusPath";
 
 const TodoAddField = () => {
   const { addTodo } = useActions();
   const onAddClick = () => {
     if (text !== "") {
       addTodo({ id: uuid(), text: text, completed: false });
+      setText("");
     }
   };
   const [text, setText] = useState("");
@@ -17,6 +18,7 @@ const TodoAddField = () => {
         onChange={(event) => setText(event.target.value)}
         type="text"
         placeholder="Введите задачу..."
+        value={text}
       />
       <button className="todo__add-field-button" onClick={onAddClick}>
         <svg
@@ -26,10 +28,7 @@ const TodoAddField = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d={plusPath}
-            fill="black"
-          />
+          <path d={plusPath} fill="black" />
         </svg>
       </button>
     </div>
